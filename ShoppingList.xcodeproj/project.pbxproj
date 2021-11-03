@@ -13,6 +13,11 @@
 		04C013992733171800811B2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C013972733171800811B2C /* Main.storyboard */; };
 		04C0139B2733171B00811B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C0139A2733171B00811B2C /* Assets.xcassets */; };
 		04C0139E2733171B00811B2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C0139C2733171B00811B2C /* LaunchScreen.storyboard */; };
+		04C013A72733175B00811B2C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 04C013A62733175B00811B2C /* Realm */; };
+		04C013A92733175B00811B2C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04C013A82733175B00811B2C /* RealmSwift */; };
+		04C013AB273317DB00811B2C /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C013AA273317DB00811B2C /* ShoppingListTableViewCell.swift */; };
+		04C013AD273317ED00811B2C /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C013AC273317ED00811B2C /* ShoppingListTableViewController.swift */; };
+		04C013AF2733192900811B2C /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C013AE2733192900811B2C /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,9 @@
 		04C0139A2733171B00811B2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C0139D2733171B00811B2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04C0139F2733171B00811B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C013AA273317DB00811B2C /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
+		04C013AC273317ED00811B2C /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
+		04C013AE2733192900811B2C /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C013A92733175B00811B2C /* RealmSwift in Frameworks */,
+				04C013A72733175B00811B2C /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +70,12 @@
 				04C013932733171800811B2C /* SceneDelegate.swift */,
 				04C013952733171800811B2C /* ViewController.swift */,
 				04C013972733171800811B2C /* Main.storyboard */,
+				04C013AE2733192900811B2C /* RealmModel.swift */,
 				04C0139A2733171B00811B2C /* Assets.xcassets */,
 				04C0139C2733171B00811B2C /* LaunchScreen.storyboard */,
 				04C0139F2733171B00811B2C /* Info.plist */,
+				04C013AA273317DB00811B2C /* ShoppingListTableViewCell.swift */,
+				04C013AC273317ED00811B2C /* ShoppingListTableViewController.swift */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -83,6 +96,10 @@
 			dependencies = (
 			);
 			name = ShoppingList;
+			packageProductDependencies = (
+				04C013A62733175B00811B2C /* Realm */,
+				04C013A82733175B00811B2C /* RealmSwift */,
+			);
 			productName = ShoppingList;
 			productReference = 04C0138E2733171700811B2C /* ShoppingList.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +128,9 @@
 				Base,
 			);
 			mainGroup = 04C013852733171700811B2C;
+			packageReferences = (
+				04C013A52733175B00811B2C /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 04C0138F2733171700811B2C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +158,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C013AD273317ED00811B2C /* ShoppingListTableViewController.swift in Sources */,
+				04C013AF2733192900811B2C /* RealmModel.swift in Sources */,
 				04C013962733171800811B2C /* ViewController.swift in Sources */,
+				04C013AB273317DB00811B2C /* ShoppingListTableViewCell.swift in Sources */,
 				04C013922733171700811B2C /* AppDelegate.swift in Sources */,
 				04C013942733171800811B2C /* SceneDelegate.swift in Sources */,
 			);
@@ -360,6 +383,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04C013A52733175B00811B2C /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04C013A62733175B00811B2C /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04C013A52733175B00811B2C /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		04C013A82733175B00811B2C /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04C013A52733175B00811B2C /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04C013862733171700811B2C /* Project object */;
 }
