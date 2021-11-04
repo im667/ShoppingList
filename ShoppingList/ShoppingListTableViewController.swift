@@ -36,6 +36,9 @@ class ShoppingListTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = filterBtn
 
+        self.tabBarController?.tabBar.tintColor = UIColor.green
+        self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
+        
         self.IsUserInputTf.placeholder = "무엇을 구매하실 건가요?"
         print("Realm:",localRealm.configuration.fileURL!)
         tasks = localRealm.objects(ShoppingList.self)

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0j6-DK-tvZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rQ8-MZ-yUE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -95,36 +96,158 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xrx-di-a2e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773.913043478261" y="116.51785714285714"/>
+            <point key="canvasLocation" x="3594.202898550725" y="116.51785714285714"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="MNn-HT-u6j">
+        <!--Setting-->
+        <scene sceneID="2Be-Eh-wr6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0j6-DK-tvZ" sceneMemberID="viewController">
+                <viewController id="wLW-8S-RMf" customClass="SettingViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6VE-Ka-I0i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7a-ov-SMR">
+                                <rect key="frame" x="20" y="94" width="374" height="31"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="brG-uV-aOH"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="백업하기"/>
+                                <connections>
+                                    <action selector="backupButtonClicked:" destination="wLW-8S-RMf" eventType="touchUpInside" id="cI8-LX-PjC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgM-RR-0Lj">
+                                <rect key="frame" x="20" y="175" width="374" height="31"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="xzf-bW-aS8"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="백업 파일 공유하기"/>
+                                <connections>
+                                    <action selector="isClickedActivityViewController:" destination="wLW-8S-RMf" eventType="touchUpInside" id="WAl-4b-qgG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqw-2d-xCd">
+                                <rect key="frame" x="20" y="256" width="374" height="31"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="P2x-vO-HIs"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="복원하기"/>
+                                <connections>
+                                    <action selector="restoreButtonClicked:" destination="wLW-8S-RMf" eventType="touchUpInside" id="3M2-rw-CZz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Va2-GO-5HK"/>
+                        <color key="backgroundColor" systemColor="tintColor"/>
+                        <constraints>
+                            <constraint firstItem="PgM-RR-0Lj" firstAttribute="top" secondItem="F7a-ov-SMR" secondAttribute="bottom" constant="50" id="0bc-Ir-X50"/>
+                            <constraint firstItem="PgM-RR-0Lj" firstAttribute="height" secondItem="F7a-ov-SMR" secondAttribute="height" id="AJB-kn-sbY"/>
+                            <constraint firstItem="Oqw-2d-xCd" firstAttribute="width" secondItem="F7a-ov-SMR" secondAttribute="width" id="ELz-Kf-sUy"/>
+                            <constraint firstItem="F7a-ov-SMR" firstAttribute="top" secondItem="Va2-GO-5HK" secondAttribute="top" constant="50" id="Nuk-DV-TP2"/>
+                            <constraint firstItem="Oqw-2d-xCd" firstAttribute="height" secondItem="F7a-ov-SMR" secondAttribute="height" id="PPs-s0-CVa"/>
+                            <constraint firstItem="Oqw-2d-xCd" firstAttribute="top" secondItem="PgM-RR-0Lj" secondAttribute="bottom" constant="50" id="RyT-ru-QHR"/>
+                            <constraint firstItem="F7a-ov-SMR" firstAttribute="leading" secondItem="Va2-GO-5HK" secondAttribute="leading" constant="20" id="WNG-uZ-G15"/>
+                            <constraint firstItem="PgM-RR-0Lj" firstAttribute="leading" secondItem="Va2-GO-5HK" secondAttribute="leading" constant="20" id="XAb-gF-6DP"/>
+                            <constraint firstItem="Va2-GO-5HK" firstAttribute="trailing" secondItem="F7a-ov-SMR" secondAttribute="trailing" constant="20" id="aQX-Lf-7mE"/>
+                            <constraint firstItem="Va2-GO-5HK" firstAttribute="trailing" secondItem="PgM-RR-0Lj" secondAttribute="trailing" constant="20" id="cvJ-jC-aNy"/>
+                            <constraint firstItem="Va2-GO-5HK" firstAttribute="trailing" secondItem="Oqw-2d-xCd" secondAttribute="trailing" constant="20" id="ju5-yx-7jp"/>
+                            <constraint firstItem="PgM-RR-0Lj" firstAttribute="width" secondItem="F7a-ov-SMR" secondAttribute="width" id="rWa-T8-IdR"/>
+                            <constraint firstItem="Oqw-2d-xCd" firstAttribute="leading" secondItem="Va2-GO-5HK" secondAttribute="leading" constant="20" id="uc3-1R-GkZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Setting" image="eyes" catalog="system" id="VaK-so-2MI"/>
+                    <navigationItem key="navigationItem" id="zRS-Rr-yMr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jXl-Df-BVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3621.739130434783" y="801.5625"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KR5-QE-htd">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rQ8-MZ-yUE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6ld-RQ-M4P">
+                    <navigationItem key="navigationItem" id="YFh-ZN-S0a"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xaZ-Kc-QgK">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xLW-3J-DvQ" kind="relationship" relationship="viewControllers" id="kfj-fd-GWJ"/>
+                        <segue destination="wLW-8S-RMf" kind="relationship" relationship="viewControllers" id="zz8-he-giJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lwV-ua-NtE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813" y="117"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="g35-iE-dIV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xLW-3J-DvQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Main" image="house.fill" catalog="system" id="wpP-k1-sG4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c5D-TU-rWb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6Qm-EK-FTJ" kind="relationship" relationship="rootViewController" id="5cU-EJ-n4j"/>
+                        <segue destination="6Qm-EK-FTJ" kind="relationship" relationship="rootViewController" id="ccW-5V-x9D"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lzu-gM-rG8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6mh-I2-d5B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863.768115942029" y="116.51785714285714"/>
+            <point key="canvasLocation" x="2684.057971014493" y="116.51785714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2ir-UJ-ngK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9zn-R8-zWY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wCX-M1-Ta9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wLW-8S-RMf" kind="relationship" relationship="rootViewController" id="SAN-6l-UJF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Gp-cm-IO5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2713" y="802"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zz8-he-giJ"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
+        <image name="eyes" catalog="system" width="128" height="99"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
