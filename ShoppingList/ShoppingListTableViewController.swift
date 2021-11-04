@@ -28,6 +28,13 @@ class ShoppingListTableViewController: UITableViewController {
         
         listTableView.delegate = self
         listTableView.dataSource = self
+        
+        let BtnImg = UIImage(systemName:"square.grid.2x2.fill")
+        let filterBtn = UIBarButtonItem(image:BtnImg, style:.plain, target: self, action: #selector(filterBtn(_:)))
+        
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationItem.rightBarButtonItem = filterBtn
 
         self.IsUserInputTf.placeholder = "무엇을 구매하실 건가요?"
         print("Realm:",localRealm.configuration.fileURL!)
@@ -154,8 +161,41 @@ override func tableView(_ tableView: UITableView, commit editingStyle: UITableVi
                   listTableView.reloadData()
        }
     
-    @IBAction func fiterBtn(_ sender: UIButton) {
+    @objc func filterBtn(_ sender: UIButton) {
         
+        let alert = UIAlertController(title: "CATEGORY", message: "분류 선택", preferredStyle: .actionSheet)
+       
+        let success = UIAlertAction(title: "완료순", style: .default){ action
+            in
+            let sortedByCheck = self.tasks.sorted(byKeyPath: "check", ascending: false)
+            self.tasks = sortedByCheck
+           
+            self.listTableView.reloadData()
+        }
+        let check = UIAlertAction(title: "이름순", style: .default){ action
+            in
+            let sortedBytitle = self.tasks.sorted(byKeyPath: "title", ascending: false)
+            self.tasks = sortedBytitle
+            
+            self.listTableView.reloadData()
+        }
+        let bookmark = UIAlertAction(title: "즐겨찾기순", style: .default){ action
+            in
+            let sortedBybookmark = self.tasks.sorted(byKeyPath: "bookmark", ascending: false)
+            self.tasks = sortedBybookmark
+            
+            self.listTableView.reloadData()
+        }
+      
+        
+        let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(success)
+        alert.addAction(check)
+        alert.addAction(bookmark)
+        alert.addAction(actionCancel)
+        
+        self.present(alert, animated: true, completion: nil)
         
     }
 
