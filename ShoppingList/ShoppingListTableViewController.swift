@@ -47,6 +47,10 @@ class ShoppingListTableViewController: UITableViewController {
         
         listTableView.reloadData()
     }
+    
+ 
+    
+
 
     
     
@@ -121,6 +125,10 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
     52
 }
 
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
 override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
     try! localRealm.write{
